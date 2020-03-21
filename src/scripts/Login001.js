@@ -1,5 +1,5 @@
 import Logging from '../flows/Logging';
-import data from '../data/LoginData'
+import data from '../data/Login001'
 describe('Login Function', () => {
   it('TC001: Login with invalid email', () => {
     new Logging(data.invalidCred1)
@@ -11,10 +11,9 @@ describe('Login Function', () => {
       .loginWithCred()
   });
 
-  it('TC003: Login successful with valid credential', () => {
+  it('TC003: Login successful with valid account', () => {
     new Logging(data.validCred)
       .loginWithCred().verifyUserLoginSuccessful()
   });
 
-  
 });

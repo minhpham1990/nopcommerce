@@ -1,13 +1,16 @@
 require('@babel/register')
 exports.config = {
     runner: 'local',
-    hostname: '192.168.1.178',
+    hostname: 'localhost',//'192.168.1.178',
     port: 4444,
     path: '/wd/hub',
     suites: {
         login: [
             'src/scripts/Login001.js'
         ],
+        register:[
+            'src/scripts/Register001.js'
+        ]
     },
     // Patterns to exclude.
     exclude: [

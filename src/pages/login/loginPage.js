@@ -1,3 +1,4 @@
+let cusCommand = require('../../custom_commands/ElementCustom')
 const EMAIL_CREATE_TXT='#email_create'
 const CREATE_BTN='#SubmitCreate'
 const EMAIL_TXT='#email'
@@ -23,6 +24,16 @@ class LoginPage{
     $(SIGNIN_BTN).click()
     return this
   }
+
+  enterNewEmail(value){
+    $(EMAIL_CREATE_TXT).setValue(value)
+    return this
+  }
+
+  clickCreate(){
+    $(CREATE_BTN).click()
+    return this
+  } 
 }
 export default new LoginPage()
 
