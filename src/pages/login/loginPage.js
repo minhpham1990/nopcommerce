@@ -1,4 +1,5 @@
-let cusCommand = require('../../custom_commands/ElementCustom')
+import RegisterPage from "./RegisterPage";
+
 const EMAIL_CREATE_TXT='#email_create'
 const CREATE_BTN='#SubmitCreate'
 const EMAIL_TXT='#email'

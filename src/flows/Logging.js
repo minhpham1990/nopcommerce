@@ -18,14 +18,12 @@ export default class Logging {
     return this
   }
 
-  createNewAccount(){
+  enterNewEmail(){
     login.openPage()
       .enterNewEmail(this._data.email)
       .clickCreate();
     return this
   }
-
-
 }
 
 

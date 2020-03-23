@@ -41,6 +41,20 @@ export default class MemberInfo {
     this._birthdate = value;
   }
 
+  get birthmonth() {
+    return this._birthmonth;
+  }
+  set birthmonth(value) {
+    this._birthmonth = value;
+  }
+
+  get birthyear() {
+    return this._birthyear;
+  }
+  set birthyear(value) {
+    this._birthyear = value;
+  }
+
   get address() {
     return this._address;
   }

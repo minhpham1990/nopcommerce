@@ -1,7 +1,7 @@
 require('@babel/register')
 exports.config = {
     runner: 'local',
-    hostname: 'localhost',//'192.168.1.178',
+    hostname: 'localhost',
     port: 4444,
     path: '/wd/hub',
     suites: {
@@ -37,8 +37,10 @@ exports.config = {
         timeout: 60000
     },
     before: () => {
-        //add Chai assertion to global variable
+        //using Chai assertion to global variable
         global.expect = require("chai").expect;
+        //using Sprintf to global variale
+        global.sprintf=require("sprintf-js").sprintf
     },
 
     afterTest: (test) => {
