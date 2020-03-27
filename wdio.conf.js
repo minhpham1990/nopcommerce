@@ -1,7 +1,7 @@
 require('@babel/register')
 exports.config = {
     runner: 'local',
-    hostname: 'localhost',
+    hostname: 'localhost',//'192.168.1.178',
     port: 4444,
     path: '/wd/hub',
     suites: {
@@ -31,7 +31,15 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     framework: 'mocha',
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['junit', {
+            outputDir: './reports',
+            outputFileFormat: ()=> { // optional
+                return `myReport.xml`
+            }
+        }]
+    ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
@@ -49,6 +57,5 @@ exports.config = {
             let filename = test.fullTitle;
             browser.saveScreenshot(`./error_shot/${filename}.png`);
         }
-    }
-
+    },
 }

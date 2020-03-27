@@ -7,6 +7,7 @@ export default class Logging {
 
   loginWithCred() {
     login.openPage()
+      .isEmailTextDisplay()
       .enterEmail(this._data.email)
       .enterPassword(this._data.password)
       .clickSignInBtn();

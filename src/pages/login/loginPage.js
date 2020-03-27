@@ -1,5 +1,3 @@
-import RegisterPage from "./RegisterPage";
-
 const EMAIL_CREATE_TXT='#email_create'
 const CREATE_BTN='#SubmitCreate'
 const EMAIL_TXT='#email'
@@ -10,6 +8,9 @@ class LoginPage{
   openPage(){
     browser.url('/index.php?controller=authentication&back=my-account')
     return this
+  }
+  isEmailTextDisplay(){
+    return $(EMAIL_TXT).isDisplayed();p
   }
   enterEmail(value){
     $(EMAIL_TXT).setValue(value)
