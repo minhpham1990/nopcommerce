@@ -48,7 +48,9 @@ exports.config = {
         //using Chai assertion to global variable
         global.expect = require("chai").expect;
         //using Sprintf to global variale
-        global.sprintf=require("sprintf-js").sprintf
+        global.sprintf=require("sprintf-js").sprintf;
+        //using wait for display into $(selector)
+        global.$=require("./src/custom_commands/ElementCustom").element;
     },
 
     afterTest: (test) => {

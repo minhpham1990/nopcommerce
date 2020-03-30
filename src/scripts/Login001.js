@@ -1,6 +1,12 @@
 import Logging from '../flows/Logging';
 import data from '../data/Login001'
 describe('Login Function', () => {
+  it('TC000: Verify page displayed correct', () => {
+    
+    new Logging()
+    .verifyPageDisplayCorrectly()
+  });
+
   it('TC001: Login with invalid email', () => {
     new Logging(data.invalidCred1)
       .loginWithCred()

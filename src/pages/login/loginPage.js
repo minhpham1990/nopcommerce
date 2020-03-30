@@ -1,6 +1,6 @@
 const EMAIL_CREATE_TXT='#email_create'
 const CREATE_BTN='#SubmitCreate'
-const EMAIL_TXT='#email'
+const EMAIL_TXT='#email1'
 const PASSWORD_TXT='#passwd'
 const SIGNIN_BTN='#SubmitLogin'
 
@@ -9,8 +9,12 @@ class LoginPage{
     browser.url('/index.php?controller=authentication&back=my-account')
     return this
   }
-  isEmailTextDisplay(){
-    return $(EMAIL_TXT).isDisplayed();p
+  isEmailTxtDisplay(){
+    return $(EMAIL_TXT).isDisplayed();
+  }
+
+  isPasswordTxtDisplay(){
+    return $(PASSWORD_TXT).isDisplayed();
   }
   enterEmail(value){
     $(EMAIL_TXT).setValue(value)
