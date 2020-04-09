@@ -10,3 +10,4 @@ Website: http://automationpractice.com/
 4. Run 'npm test wdio.config.js'
 
 # folder structure
+#test new
