@@ -1,7 +1,9 @@
 # automationpractice
-This is demo project using WebdriverIO 
-
-Website: http://automationpractice.com/
+This is demo project with automation testing
+Using:
+- Mocha Framework
+- WebdriverIO Runner
+Website: https://demo.nopcommerce.com/
 
 # how to run
 1. Get latest resource from git
@@ -10,5 +12,3 @@ Website: http://automationpractice.com/
 4. Run 'npm test wdio.config.js'
 
 # folder structure
-#test new
-# test new 2

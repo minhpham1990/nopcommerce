@@ -1,28 +1,26 @@
-const EMAIL_CREATE_TXT='#email_create'
-const CREATE_BTN='#SubmitCreate'
-const EMAIL_TXT='#email'
-const PASSWORD_TXT='#passwd'
-const SIGNIN_BTN='#SubmitLogin'
+const EMAIL_TXB='#Email'
+const PASSWORD_TXB='#Password'
+const SIGNIN_BTN='.button-1.login-button'
 
 class LoginPage{
   openPage(){
-    browser.url('/index.php?controller=authentication&back=my-account')
+    browser.url('/login')
     return this
   }
   isEmailTxtDisplay(){
-    return $(EMAIL_TXT).isDisplayed();
+    return $(EMAIL_TXB).isDisplayed();
   }
 
   isPasswordTxtDisplay(){
-    return $(PASSWORD_TXT).isDisplayed();
+    return $(PASSWORD_TXB).isDisplayed();
   }
   enterEmail(value){
-    $(EMAIL_TXT).setValue(value)
+    $(EMAIL_TXB).setValue(value)
     return this
   }
 
   enterPassword(value){
-    $(PASSWORD_TXT).setValue(value)
+    $(PASSWORD_TXB).setValue(value)
     return this
   }
 
@@ -30,16 +28,6 @@ class LoginPage{
     $(SIGNIN_BTN).click()
     return this
   }
-
-  enterNewEmail(value){
-    $(EMAIL_CREATE_TXT).setValue(value)
-    return this
-  }
-
-  clickCreate(){
-    $(CREATE_BTN).click()
-    return this
-  } 
 }
 export default new LoginPage()
 

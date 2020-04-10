@@ -1,6 +1,6 @@
 import credential from '../entity/Credential'
 const validCred = new credential()
-validCred.email='minh@yopmail.com';
+validCred.email='minhauto1@yopmail.com';
 validCred.password='123123';
 
 const invalidCred1 = new credential();

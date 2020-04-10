@@ -1,5 +1,5 @@
 import login from '../pages/login/LoginPage.js'
-import myaccount from '../pages/account/MyAccountPage.js'
+import header from '../pages/common/Header.js'
 export default class Logging {
   constructor(data) {
     this._data = data
@@ -19,7 +19,8 @@ export default class Logging {
     return this
   }
   verifyUserLoginSuccessful(){
-    expect(myaccount.getWelcomeMsg()).to.equal('Welcome to your account. Here you can manage all of your personal information and orders.');
+    expect(header.isLogOutDisplayed()).to.be.true;
+    expect(header.isMyAccountDisplayed()).to.be.true;
     return this
   }
 

@@ -26,7 +26,7 @@ exports.config = {
     ],
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'http://automationpractice.com',
+    baseUrl: 'https://demo.nopcommerce.com/',
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
