@@ -13,5 +13,5 @@ before_install:
 install:
   - npm install
 script:
-  - npm test wdio.conf.js -- --suite login
+  - npm test wdio.conf.js -- --suite login register
 cache: npm
