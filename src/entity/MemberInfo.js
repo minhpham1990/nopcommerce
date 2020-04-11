@@ -6,10 +6,10 @@ export default class MemberInfo {
     this._email = value;
   }
 
-  get title() {
+  get gender() {
     return this._title;
   }
-  set title(value) {
+  set gender(value) {
     this._title = value;
   }
 
@@ -53,48 +53,6 @@ export default class MemberInfo {
   }
   set birthyear(value) {
     this._birthyear = value;
-  }
-
-  get address() {
-    return this._address;
-  }
-  set address(value) {
-    this._address = value;
-  }
-
-  get city() {
-    return this._city;
-  }
-  set city(value) {
-    this._city = value;
-  }
-
-  get state() {
-    return this._state;
-  }
-  set state(value) {
-    this._state = value;
-  }
-
-  get zip() {
-    return this._zip;
-  }
-  set zip(value) {
-    this._zip = value;
-  }
-  
-  get country() {
-    return this._country;
-  }
-  set country(value) {
-    this._country = value;
-  }
-  
-  get mobile() {
-    return this._mobile;
-  }
-  set mobile(value) {
-    this._mobile = value;
   }
 
 }

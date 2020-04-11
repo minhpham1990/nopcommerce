@@ -1,89 +1,57 @@
-const TITLE='.radio-inline > .top > .radio > span > #id_gender%s'
-const FIRSTNAME_TXT='#customer_firstname'
-const LASTNAME_TXT='#customer_lastname'
-const PASSWORD_TXT='#passwd'
-const ADDRESS_TXT='#address1'
-const CITY_TXT='#city'
-const STATE_DDL='#id_state'
-const ZIP_TXT='#postcode'
-const COUNTRY_DDL='#id_country'
-const MOBILE_TXT='#phone_mobile'
-const SUBMIT_BTN='#submitAccount'
-const BIRTHDATE_DDL='//select[@id="days"]'
-const BIRTHMONTH_DDL='//select[@id="months"]'
-const BIRTHYEAR_DDL='//select[@id="years"]'
-const BIRTHDATE_OPTION ='//div[@id="uniform-days"]//option[@value="%s"]'
-const BIRTHMONTH_OPTION='//select[@id="months"]//option[starts-with(text(),"%s")]'
-const BIRTHYEAR_OPTION='//select[@id="years"]//option[starts-with(text(),"%s")]'
-const WELCOME_MSG='.info-account'
+const GENDER_OPTION = '//div[@class="gender"]/span[@class="%s"]/input'
+const FIRSTNAME_TXB = '#FirstName';
+const LASTNAME_TXB = '#LastName';
+const DOBDAY_DDL ='select[name="DateOfBirthDay"]';
+const DOBMONTH_DDL ='select[name="DateOfBirthMonth"]';
+const DOBYEAR_DDL ='select[name="DateOfBirthYear"]';
+const EMAIL_TXB = '#Email'
+const PASSWORD_TXB = '#Password'
+const PASSWORD_CONFIRM_TXB ='#ConfirmPassword';
+const WELCOME_MSG='div[class=result]'
+const REGISTER_BTN='.button-1.register-next-step-button'
+const CONT_BTN='.button-1.register-continue-button'
 class RegisterPage{
-  selectTitle(idCheckBox){
-    $(sprintf(TITLE,idCheckBox)).click()
+  openPage(){
+    browser.url('/register')
     return this
   }
 
-  enterFirstName(value){
-    $(FIRSTNAME_TXT).setValue(value)
+  selectGender(value){
+    $(sprintf(GENDER_OPTION,value)).click();
     return this
   }
 
-  enterLastName(value){
-    $(LASTNAME_TXT).setValue(value)
+  enterFirstname(value){
+    $(FIRSTNAME_TXB).setValue(value);
     return this
   }
 
+  enterLastname(value){
+    $(LASTNAME_TXB).setValue(value);
+    return this
+  }
+
+  selectDOB(day,month,year){
+    $(DOBDAY_DDL).selectByVisibleText(day);
+    $(DOBMONTH_DDL).selectByVisibleText(month);
+    $(DOBYEAR_DDL).selectByVisibleText(year);
+    return this
+  }
+  enterEmail(value){
+    $(EMAIL_TXB).setValue(value);
+    return this
+  }
   enterPassword(value){
-    $(PASSWORD_TXT).setValue(value)
+    $(PASSWORD_TXB).setValue(value);
     return this
   }
-
-  selectBirthDate(date){
-    $(BIRTHDATE_DDL).selectByAttribute('value',date)
-    return this
-  }
-  selectBirthMonth(month){
-    $(BIRTHMONTH_DDL).click()
-    $(sprintf(BIRTHMONTH_OPTION,month)).click()
-    return this
-  }
-  selectBirthYear(year){
-    $(BIRTHYEAR_DDL).click();
-    $(sprintf(BIRTHYEAR_OPTION,year)).click()
-    return this
-  }
-
-  enterAddress(value){
-    $(ADDRESS_TXT).setValue(value)
-    return this
-  }
-
-  enterCity(value){
-    $(CITY_TXT).setValue(value)
-    return this
-  }
-
-  selectState(value){
-    $(STATE_DDL).selectByVisibleText(value)
-    return this
-  }
-
-  enterZipCode(value){
-    $(ZIP_TXT).setValue(value)
-    return this
-  }
-
-  selectCountry(value){
-    $(COUNTRY_DDL).selectByVisibleText(value)
-    return this
-  }
-
-  enterMobilePhone(value){
-    $(MOBILE_TXT).setValue(value)
+  enterConfirmPassword(value){
+    $(PASSWORD_CONFIRM_TXB).setValue(value);
     return this
   }
 
   clickRegister(){
-    $(SUBMIT_BTN).click()
+    $(REGISTER_BTN).click()
     return this
   }
 
@@ -91,6 +59,11 @@ class RegisterPage{
     $(WELCOME_MSG).waitForDisplayed(5000)
     let msg=$(WELCOME_MSG).getText();
     return msg
+  }
+
+  clickContinue(){
+    $(CONT_BTN).click();
+    return this
   }
 }
 

@@ -1,34 +1,26 @@
 import RegisterPage from '../pages/login/RegisterPage.js'
-export default class Registering{
-  constructor(data){
-    this._data=data;
+import Header from '../pages/common/Header.js'
+export default class Registering {
+  constructor(data) {
+    this._data = data;
   }
-  createNewAccount(){
-    if(this._data.title==='Mr')
-    {
-      RegisterPage.selectTitle(1);
-    }
-    else if(this._data.title==='Mrs'){
-      RegisterPage.selectTitle(2);
-    }
+  createNewAccount() {
     RegisterPage
-      .enterFirstName(this._data.firstname)
-      .enterLastName(this._data.lastname)
+      .openPage()
+      .selectGender(this._data.gender)
+      .enterFirstname(this._data.firstname)
+      .enterLastname(this._data.lastname)
+      .selectDOB(this._data.birthdate, this._data.birthmonth, this._data.birthyear)
+      .enterEmail(this._data.email)
       .enterPassword(this._data.password)
-      .selectBirthDate(this._data.birthdate)
-      .selectBirthMonth(this._data.birthmonth)
-      .selectBirthYear(this._data.birthyear)
-      .enterAddress(this._data.address)
-      .enterCity(this._data.city)
-      .selectState(this._data.state)
-      .enterZipCode(this._data.zip)
-      .selectCountry(this._data.country)
-      .enterMobilePhone(this._data.mobile)
+      .enterConfirmPassword(this._data.password)
       .clickRegister()
     return this
   }
-  verifyCreateNewUserSuccess(){
-    expect(RegisterPage.getWelcomeMsg()).to.equal('Welcome to your account. Here you can manage all of your personal information and orders.');
+  verifyCreateNewUserSuccess() {
+    expect(Header.isLogOutDisplayed()).to.be.true;
+    expect(Header.isMyAccountDisplayed()).to.be.true;
+    expect(RegisterPage.getWelcomeMsg()).to.equal('Your registration completed');
     return this
   }
 }
