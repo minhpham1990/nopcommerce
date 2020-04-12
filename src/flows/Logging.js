@@ -12,6 +12,14 @@ export default class Logging {
       .clickSignInBtn();
     return this
   }
+
+  loginWithValidUserAndPass(username,password){
+    login.openPage()
+      .enterEmail(username)
+      .enterPassword(password)
+      .clickSignInBtn();
+    return this
+  }
   verifyPageDisplayCorrectly(){
     login.openPage()
     expect(login.isEmailTxtDisplay()).to.be.true;

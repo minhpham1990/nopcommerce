@@ -56,8 +56,13 @@ exports.config = {
     afterTest: (test) => {
         //take screen shot when failed test
         if (test.passed === false) {
+            const fs = require('fs');
+            const path = './errorCapture'
+            if(!fs.existsSync(path)){
+                fs.mkdirSync(path)
+            }
             let filename = test.fullTitle;
-            browser.saveScreenshot(`./error_shot/${filename}.png`);
+            browser.saveScreenshot(`./errorCapture/${filename}.png`);
         }
     },
 }

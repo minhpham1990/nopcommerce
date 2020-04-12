@@ -10,6 +10,11 @@ const PASSWORD_CONFIRM_TXB ='#ConfirmPassword';
 const WELCOME_MSG='div[class=result]'
 const REGISTER_BTN='.button-1.register-next-step-button'
 const CONT_BTN='.button-1.register-continue-button'
+const FNAME_ERR='#FirstName-error'
+const LNAME_ERR='#LastName-error'
+const EMAIL_ERR='#Email-error'
+const PASS_ERR='#Password-error'
+const CPASS_ERR='#ConfirmPassword-error'
 class RegisterPage{
   openPage(){
     browser.url('/register')
@@ -64,6 +69,34 @@ class RegisterPage{
   clickContinue(){
     $(CONT_BTN).click();
     return this
+  }
+
+  getFirstNameMsg(){
+    $(FNAME_ERR).waitForDisplayed(5000)
+    let msg=$(FNAME_ERR).getText();
+    return msg
+  }
+
+  getLastNameMsg(){
+    $(LNAME_ERR).waitForDisplayed(5000)
+    let msg=$(LNAME_ERR).getText();
+    return msg
+  }
+
+  getEmailMsg(){
+    $(EMAIL_ERR).waitForDisplayed(5000)
+    let msg=$(EMAIL_ERR).getText();
+    return msg
+  }
+  getPassMsg(){
+    $(PASS_ERR).waitForDisplayed(5000)
+    let msg=$(PASS_ERR).getText();
+    return msg
+  }
+  getConfirmPassMsg(){
+    $(CPASS_ERR).waitForDisplayed(5000)
+    let msg=$(CPASS_ERR).getText();
+    return msg
   }
 }
 

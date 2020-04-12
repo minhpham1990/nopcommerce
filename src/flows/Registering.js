@@ -23,4 +23,12 @@ export default class Registering {
     expect(RegisterPage.getWelcomeMsg()).to.equal('Your registration completed');
     return this
   }
+  verifyBlankFields(){
+    expect(RegisterPage.getFirstNameMsg()).to.equal('First name is required.');
+    expect(RegisterPage.getLastNameMsg()).to.equal('Last name is required.');
+    expect(RegisterPage.getEmailMsg()).to.equal('Email is required.');
+    expect(RegisterPage.getPassMsg()).to.equal('Password is required.');
+    expect(RegisterPage.getConfirmPassMsg()).to.equal('Password is required.');
+    return this
+  }
 }
