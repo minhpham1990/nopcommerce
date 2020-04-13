@@ -40,12 +40,11 @@ exports.config = {
     framework: 'mocha',
     reporters: [
         'spec',
-        ['junit', {
-            outputDir: './reports',
-            outputFileFormat: ()=> { // optional
-                return `myReport.xml`
-            }
-        }]
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+          }]
+        
     ],
     mochaOpts: {
         ui: 'bdd',

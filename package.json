@@ -4,7 +4,8 @@
   "description": "This is demo project using WebdriverIO",
   "main": "index.js",
   "scripts": {
-    "test": "wdio"
+    "test": "wdio",
+    "report": "allure generate ./allure-results --clean && allure open"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
+    "@wdio/allure-reporter": "^6.0.14",
     "@wdio/cli": "^5.9.1",
     "@wdio/config": "^5.9.1",
     "@wdio/dot-reporter": "^5.7.8",

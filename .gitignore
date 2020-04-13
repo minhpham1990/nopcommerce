@@ -1,3 +1,5 @@
 /node_modules
 /errorCapture
 /reports
+/allure-report
+/allure-results
