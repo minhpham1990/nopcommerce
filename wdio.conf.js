@@ -33,7 +33,7 @@ exports.config = {
     ],
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'https://demo.nopcommerce.com/',
+    baseUrl: process.env.BASE_URL,
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
