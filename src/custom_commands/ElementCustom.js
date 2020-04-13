@@ -1,9 +1,4 @@
-class CustomCommand {
-
-  enterRandom(locator) {
-    $(locator).setValue('xxx@xxx.com')
-    return this
-  }
+class EleCustom {
 
   element(selector, timeout){
     browser.$(selector).waitForDisplayed(5000, false, 'I cannot find '+selector)
@@ -12,4 +7,4 @@ class CustomCommand {
    
 }
 
-module.exports = new CustomCommand()
+module.exports = new EleCustom()

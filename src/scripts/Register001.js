@@ -1,7 +1,7 @@
 import Registering from '../flows/Registering'
 import data from '../data/Register001';
 describe('Register Function', () => {
-  it('TC001: Create new account with valid email', () => {
+  it('TC001: Verify create new account success', () => {
     new Registering(data.newAccount)
       .createNewAccount().verifyCreateNewUserSuccess()
   });

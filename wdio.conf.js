@@ -4,6 +4,9 @@ exports.config = {
     hostname: 'localhost',//'192.168.1.178',
     port: 4444,
     path: '/wd/hub',
+    specs:[
+        'src/scripts/test.js'
+    ],
     suites: {
         login: [
             'src/scripts/Login001.js'
@@ -22,6 +25,10 @@ exports.config = {
         {
             maxInstances: 5,
             browserName: 'chrome',
+            'goog:chromeOptions': {
+                
+                args: ['--headless', '--disable-gpu'],
+                }
         },
     ],
     logLevel: 'silent',
