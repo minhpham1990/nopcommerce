@@ -14,5 +14,4 @@ install:
   - npm install
 script:
   - npm test wdio.conf.js -- --suite login register
-  - npm run report
 cache: npm
