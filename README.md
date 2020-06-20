@@ -16,3 +16,4 @@ Website: https://demo.nopcommerce.com/
 1. Run 'npm run report'
 
 # folder structure
+test git
