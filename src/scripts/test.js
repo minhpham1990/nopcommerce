@@ -11,9 +11,13 @@ import CusCommand from '../custom_commands/CommandCustom';
 
 const NUMBER_LOC = 'select[name="DateOfBirthDay"]';
 const NUMBER_ITEMS_LOC = 'select[name="DateOfBirthDay"]>option';
+const MONTH = 'select[name="DateOfBirthMonth"]'
 describe('test', () => {
   it('test', () => {
     browser.url('https://demo.nopcommerce.com/register')
     CusCommand.selectItemInDropdown(NUMBER_LOC,NUMBER_ITEMS_LOC,"10")
+    browser.pause(5000)
+    $(MONTH).click();
+    browser.pause(5000)
   });
 });

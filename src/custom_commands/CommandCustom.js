@@ -8,11 +8,17 @@ class CustomCommand {
     $(locatorItems).waitForDisplayed();
 
     //check item want select exist in array locatorItems
-    ($$(locatorItems)).forEach(item => {
-      if (item.getText()===selectItem){
-        item.click()
+    // ($$(locatorItems)).forEach(item => {
+    //   if (item.getText()===selectItem){
+    //     item.click()
+    //   }
+    // });
+    for (let item of $$(locatorItems)) {
+      if (item.getText()===selectItem) {
+        item.click();
+        break;
       }
-    });
+    }
   }
 }
 module.exports = new CustomCommand()

@@ -1,7 +1,7 @@
-require('@babel/register')
+require('@babel/register');
 exports.config = {
     runner: 'local',
-    hostname: 'localhost',//'192.168.1.178',
+    hostname: "192.168.1.178",//'192.168.1.178',
     port: 4444,
     path: '/wd/hub',
     specs:[
@@ -33,7 +33,7 @@ exports.config = {
     ],
     logLevel: 'silent',
     bail: 0,
-    baseUrl: process.env.BASE_URL,
+    baseUrl: 'https://demo.nopcommerce.com', //process.env.BASE_URL,
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
