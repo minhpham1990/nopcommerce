@@ -5,7 +5,7 @@ exports.config = {
     port: 4444,
     path: '/wd/hub',
     specs:[
-        'src/scripts/test.js'
+        'src/scripts/Login001.js'
     ],
     suites: {
         login: [
@@ -31,7 +31,10 @@ exports.config = {
                 }
         },
     ],
-    logLevel: 'silent',
+    logLevels: {
+        webdriver: 'silent',
+        '@wdio/logger': 'info'
+    },
     bail: 0,
     baseUrl: 'https://demo.nopcommerce.com', //process.env.BASE_URL,
     waitforTimeout: 10000,
@@ -56,7 +59,8 @@ exports.config = {
         //using Sprintf to global variale
         global.sprintf=require("sprintf-js").sprintf;
         //using wait for display into $(selector)
-        global.$=require("./src/custom_commands/ElementCustom").element;
+        //global.$=require("./src/custom_commands/ElementCustom").element;
+
     },
 
     afterTest: (test) => {

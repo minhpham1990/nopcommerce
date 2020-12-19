@@ -1,5 +1,6 @@
 import RegisterPage from '../pages/login/RegisterPage.js'
 import Header from '../pages/common/Header.js'
+import ActionGen from '../utils/ActionGen'
 export default class Registering {
   constructor(data) {
     this._data = data;
@@ -20,7 +21,7 @@ export default class Registering {
   verifyCreateNewUserSuccess() {
     expect(Header.isLogOutDisplayed()).to.be.true;
     expect(Header.isMyAccountDisplayed()).to.be.true;
-    expect(RegisterPage.getWelcomeMsg()).to.equal('Your registration completed');
+    ActionGen.assertValue(RegisterPage.getWelcomeMsg(),'Your registration completed' );
     return this
   }
   verifyBlankFields(){

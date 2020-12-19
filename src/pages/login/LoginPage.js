@@ -1,7 +1,9 @@
+import ActionGen from '../../utils/ActionGen';
+import logger from '@wdio/logger'
 const EMAIL_TXB='#Email'
 const PASSWORD_TXB='#Password'
 const SIGNIN_BTN='.button-1.login-button'
-
+const log = logger("ActionLog")
 class LoginPage{
   openPage(){
     browser.url('/login')
@@ -15,17 +17,20 @@ class LoginPage{
     return $(PASSWORD_TXB).isDisplayed();
   }
   enterEmail(value){
-    $(EMAIL_TXB).setValue(value)
+    log.info("Start to enter "+value+" into email textbox");
+    ActionGen.getElement(EMAIL_TXB).setValue(value)
     return this
   }
 
   enterPassword(value){
-    $(PASSWORD_TXB).setValue(value)
+    log.info("Start to enter "+value+" into password textbox");
+    ActionGen.getElement(PASSWORD_TXB).setValue(value)
     return this
   }
 
   clickSignInBtn(){
-    $(SIGNIN_BTN).click()
+    log.info("Start to click Login button");
+    ActionGen.getElement(SIGNIN_BTN).click()
     return this
   }
 }
